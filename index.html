@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tickle Me Tyler</title>
+  <style>
+    img {
+      height: 100vh;
+      margin: auto;
+      display: block;
+    }
+</style>
+</head>
+<body>
+  <div>
+    <img alt="tyler-elmo" id="image" src="happy.PNG"/>
+  </div>
+  <script>
+    const button = document.querySelector("#image");
+
+    button.addEventListener("click", (event) => {
+      button.src = 'angry.PNG';
+      const randAudio = Math.floor(Math.random() * 21) + 1;
+      const audio = new Audio(`New Recording ${randAudio}.m4a`);
+      audio.play();
+      setTimeout(() => {
+      button.src = 'happy.PNG';
+      }, 3000)
+    });
+  </script>
+</body>
+</html>
